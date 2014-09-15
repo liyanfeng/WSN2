@@ -23,7 +23,7 @@ static basicRfCfg_t basicRfConfig;
 
 void rfChannelScan(void)
 {
-    uint8 pTxData[] = {'H', 'e', 'l', 'l', 'o', ' ', 'c', 'c', '2', '5', '3', '0', '\r', '\n'};
+    uint8 pTxData[64];
     uint8 pRxData[32];
     int i,rlen=0;
     uint8 channel;
@@ -35,7 +35,7 @@ void rfChannelScan(void)
     printf("liiiiii\r\n");
     while(1)
     {
-      recvCnt=0;
+        recvCnt=0;
         while(TRUE)
         {
             ch = Uart_Recv_char();
@@ -52,26 +52,36 @@ void rfChannelScan(void)
         }
         
         ret = basicRfSendPacket(RECV_ADDR, pTxData, sizeof pTxData);     
-        if (basicRfPacketIsReady()) {
-              rlen=basicRfReceive(pRxData, 32, NULL);
-              if(rlen>0)
-              {
-                  pRxData[rlen]=0;
-                  printf("get return data:%s\r\n",pRxData);
-              }
-              halMcuWaitMs(1);
+        for(i=0;i<1000;i++)
+        {
+            if (basicRfPacketIsReady()) {
+                  rlen=basicRfReceive(pRxData, 32, NULL);
+                  if(rlen>0)
+                  {
+                      pRxData[rlen]=0;
+                      printf("get return data:%s\r\n",pRxData);
+                      break;
+                  }
+                  halMcuWaitMs(1);
+                  
+            }
         }
+        
         if (ret == SUCCESS) {
-          printf("send msg ok\r\n");
-          hal_led_on(1);
-          halMcuWaitMs(100);
-          hal_led_off(1);
-          halMcuWaitMs(900); 
+            printf("send msg ok\r\n");
+            hal_led_on(1);
+            halMcuWaitMs(100);
+            hal_led_off(1);
+            halMcuWaitMs(900); 
        } else {
-          printf("send msg error\r\n");
-          hal_led_on(1);
-          halMcuWaitMs(1000);
-          hal_led_off(1);
+            printf("send msg error\r\n");
+            hal_led_on(1);
+            halMcuWaitMs(1000);
+            hal_led_off(1);
+       }
+       if(i>=1000)
+       {
+            printf("get return msg error\r\n");
        }
        
     }
@@ -89,9 +99,9 @@ void rfRecvData(void)
         rlen = basicRfReceive(pRxData, sizeof pRxData, NULL);
         
         if(rlen > 0) {
-          pRxData[rlen]=0;
-          printf("recv msg ok data:%s\r\n",pRxData);
-          ret=basicRfSendPacket(basicRfReceiveAddress(), pRxData, rlen);
+            pRxData[rlen]=0;
+            printf("recv msg ok data:%s\r\n",pRxData);
+            ret=basicRfSendPacket(basicRfReceiveAddress(), pRxData, rlen);
             if(ret==SUCCESS)
             {
                 printf("send msg ok!\r\n");
