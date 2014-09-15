@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>rssi/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>96</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>572</ColumnWidth1><ColumnWidth2>152</ColumnWidth2><ColumnWidth3>38</ColumnWidth3></Build>
+    <Debug-Log><ColumnWidth0>19</ColumnWidth0><ColumnWidth1>784</ColumnWidth1></Debug-Log><TerminalIO/></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-22014-23163</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>rssi</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-19170-23421</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-17101-22545</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>32</YPos><SelStart>1006</SelStart><SelEnd>1006</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\UltrasonicWave.c</Filename><XPos>0</XPos><YPos>54</YPos><SelStart>1126</SelStart><SelEnd>1126</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\dht11.c</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>477</SelStart><SelEnd>477</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\hal_board.c</Filename><XPos>0</XPos><YPos>48</YPos><SelStart>1159</SelStart><SelEnd>1159</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\basic_rf.c</Filename><XPos>0</XPos><YPos>528</YPos><SelStart>17037</SelStart><SelEnd>17037</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00b0a290><key>iaridepm.enu1</key></Toolbar-00b0a290></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>521</Bottom><Right>170</Right><x>-2</x><y>-2</y><xscreen>169</xscreen><yscreen>182</yscreen><sizeHorzCX>165039</sizeHorzCX><sizeHorzCY>260000</sizeHorzCY><sizeVertCX>167969</sizeVertCX><sizeVertCY>747143</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>135</Bottom><Right>1026</Right><x>-2</x><y>-2</y><xscreen>1028</xscreen><yscreen>137</yscreen><sizeHorzCX>1003906</sizeHorzCX><sizeHorzCY>195714</sizeHorzCY><sizeVertCX>165039</sizeVertCX><sizeVertCY>260000</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+
