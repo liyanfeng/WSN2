@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>ChanelScan/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>108</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>630</ColumnWidth1><ColumnWidth2>168</ColumnWidth2><ColumnWidth3>42</ColumnWidth3></Build>
+      <TerminalIO/>
+    <Debug-Log><ColumnWidth0>6</ColumnWidth0><ColumnWidth1>980</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-10744-28287</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>ChanelScan</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-31488-28513</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-12783-24551</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>90</YPos><SelStart>675</SelStart><SelEnd>675</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\basic_rf.c</Filename><XPos>0</XPos><YPos>506</YPos><SelStart>16695</SelStart><SelEnd>16695</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\hal_board.c</Filename><XPos>0</XPos><YPos>46</YPos><SelStart>827</SelStart><SelEnd>827</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\hal_int.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>773</SelStart><SelEnd>773</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\hal_int.h</Filename><XPos>0</XPos><YPos>32</YPos><SelStart>1378</SelStart><SelEnd>1378</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00b0a290><key>iaridepm.enu1</key></Toolbar-00b0a290></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>618</Bottom><Right>182</Right><x>-2</x><y>-2</y><xscreen>36</xscreen><yscreen>32</yscreen><sizeHorzCX>35156</sizeHorzCX><sizeHorzCY>45714</sizeHorzCY><sizeVertCX>179688</sizeVertCX><sizeVertCY>885714</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>38</Bottom><Right>1026</Right><x>-2</x><y>-2</y><xscreen>1028</xscreen><yscreen>40</yscreen><sizeHorzCX>1003906</sizeHorzCX><sizeHorzCY>57143</sizeHorzCY><sizeVertCX>35156</sizeVertCX><sizeVertCY>45714</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+
