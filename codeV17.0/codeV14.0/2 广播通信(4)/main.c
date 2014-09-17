@@ -52,37 +52,29 @@ unsigned char ret;
 
 void dht11_update(void);
 
+//定时器1
 #pragma vector = T1_VECTOR      //中断服务子程序
  __interrupt void T1_ISR(void)            
  {       
-          
-         
       ++counter;
-      if(counter>myrate){
+      if(counter>myrate){   //改变myrate的值改变频率
           counter=0;  
-          dht11_update();
+          dht11_update(); //获取传感器数据
           sprintf(pTsxData,"shidu:%utmp%u℃\r\n", gdat1, gdat2);
-          //printf("sensor data.....");
-          //printf(pTsxData);
-          //printf("\r\n");
-          ret = basicRfSendPacket(0xffff, pTsxData, sizeof pTsxData);       
+          ret = basicRfSendPacket(0xffff, pTsxData, sizeof pTsxData);  //   无线发送数据
           ledflashcounter=8;
-          hal_led_on(1);
-          /*if (ret == SUCCESS) {
-              printf("send msg ok\r\n");
-           } else {
-              printf("send msg error\r\n");
-           }*/ 
+          hal_led_on(1);//led1闪烁一下
       }
+      //控制led1的闪烁时间
       if(ledflashcounter>0)
-      {
+    {
           --ledflashcounter;
           if(ledflashcounter==0)
           {
                hal_led_off(1);
           }
       }
-      T1IF=0;       
+      T1IF=0;       //请中断标志位
  }
 
 
@@ -100,6 +92,8 @@ void rfSendData(void)
         recvCnt=0;
         Uart_Send_String("input num/+/- must end with @\r\n");
         tmp=0;
+        
+        //输入字符串，把字符串写到ptxdata中   1@   5@    +@   -@
         while(TRUE)
         {
             ch = Uart_Recv_char();
@@ -114,6 +108,9 @@ void rfSendData(void)
                   pTxData[recvCnt++] = ch;
             }
         }
+        
+        
+        
         //recvCnt= sizeof pTsxData;
         printf("input num:%s,length:%d",pTxData,recvCnt);
         if(pTxData[0]=='+')
@@ -124,10 +121,13 @@ void rfSendData(void)
         }
         if(pTxData[0]=='-')
         {
-              myrate+=2;
+              myrate+=2;//myrate  相当于周期   60为1秒
               printf("myrate:%d,f:%d\r\n",myrate,tmp);
               continue;     
         }
+        
+        
+        //把字符串解析成为数字--》tmp
         for(i=0;i<recvCnt;i++)
         {
             if(pTxData[i]>='0'&&pTxData[i]<='9')
@@ -161,13 +161,13 @@ void rfRecvData(void)
    printf("recv msg start...\r\n");
     // Main loop
     while (TRUE) {
-        while(!basicRfPacketIsReady());
-        rlen = basicRfReceive(pRxData, sizeof pRxData, NULL);
+        while(!basicRfPacketIsReady());//等待数据
+        rlen = basicRfReceive(pRxData, sizeof pRxData, NULL);//接收数据
         if(rlen > 0) {
           printf("recv msg ok...\r\n");
           pRxData[rlen] = 0;
             
-          printf((char *)pRxData);
+          printf((char *)pRxData);//吧传感器数据显示
             
         }
     }
@@ -177,11 +177,11 @@ void dht11_io_init(void);
 
 void main(void)
 {
-    halMcuInit();
+    halMcuInit();//cpu初始化
 
     hal_led_init();
     
-    hal_uart_init();
+    hal_uart_init();//串口初始化
     printf("你知道串口是正常的.....\r\n");
     if (FAILED == halRfInit()) {
         HAL_ASSERT(FALSE);
@@ -207,12 +207,12 @@ void main(void)
       HAL_ASSERT(FALSE);
     }
 #if NODE_TYPE
-    dht11_io_init();
-    InitialT1test();
-    basicRfReceiveOff();
-    rfSendData();
+    dht11_io_init();//温湿度传感器初始化
+    InitialT1test();//T1定时器初始化
+    basicRfReceiveOff();//关闭zigbee数据接收
+    rfSendData(); //发送数据主函数
 #else
     printf("接收数据\r\n");
-    rfRecvData();   
+    rfRecvData();   //接受数据主函数
 #endif
 }

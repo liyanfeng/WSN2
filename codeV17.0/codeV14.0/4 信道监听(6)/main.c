@@ -47,13 +47,13 @@ void rfChannelScan(void)
     {
         for (channel=11; channel<=26; channel++) {
             printf("scan channel %d ... \r\n", channel);
-            halRfSetChannel(channel);
-            basicRfSendPacket(RECV_ADDR, pTxData, sizeof pTxData);     
+            halRfSetChannel(channel);//设置信道
+            basicRfSendPacket(RECV_ADDR, pTxData, sizeof pTxData);     //发送测试数据
             for (i=0; i<1000; i++) {
-                if (basicRfPacketIsReady()) {
-                    rlen=basicRfReceive(pRxData, 32, NULL);
+                if (basicRfPacketIsReady()) {//等待接收传感器数据
+                    rlen=basicRfReceive(pRxData, 32, NULL);//接受传感器数据
                     pRxData[rlen]=0;
-                    printf("recvive data %s,  channel:%d\r\n",pRxData,channel);
+                    printf("recvive data %s,  channel:%d\r\n",pRxData,channel);//显示数据
                     break;
                 }
                 halMcuWaitMs(1);
@@ -80,27 +80,27 @@ void rfRecvData(void)
       //   11-26
       //   0-1
       //   
-        channel=(int)rand()/(RAND_MAX+1.0)*15+11;
+        channel=(int)rand()/(RAND_MAX+1.0)*15+11; //随机产生信道
         printf("channel:%d\r\n",channel);
         //halRfSetChannel(channel);
-        basicRfConfig.channel = channel;
+        basicRfConfig.channel = channel;//设置信道
         printf("channel:%d\r\n",channel);
         
-        if(basicRfInit(&basicRfConfig)==FAILED) {
+        if(basicRfInit(&basicRfConfig)==FAILED) {//初始化zigbee
           HAL_ASSERT(FALSE);
         }
-        basicRfReceiveOn();
-        while(!basicRfPacketIsReady());
-        rlen = basicRfReceive(pRxData, sizeof pRxData, NULL);
+        basicRfReceiveOn();//打开zigbee接受通道
+        while(!basicRfPacketIsReady());//等待数据
+        rlen = basicRfReceive(pRxData, sizeof pRxData, NULL);//接收数据
         pRxData[rlen]=0;
-        printf("recv msg:%s  channel:%d\r\n",pRxData,channel); 
+        printf("recv msg:%s  channel:%d\r\n",pRxData,channel); //显示接收数据和信道值
         if(rlen > 0) {
             //sprintf(pRxData,"i am recvive data ok!\r\n");
             gdat1=0;
             gdat2=0;
-            dht11_update();
+            dht11_update();//获取传感器数局
             sprintf(pRxData,"shidu:%utmp%u℃\r\n", gdat1, gdat2);
-            ret=basicRfSendPacket(basicRfReceiveAddress(), pRxData, rlen);
+            ret=basicRfSendPacket(basicRfReceiveAddress(), pRxData, rlen);//发送传感器数据
             if(ret==SUCCESS)
             {
               printf("send data ok channel:%d\r\n",channel);

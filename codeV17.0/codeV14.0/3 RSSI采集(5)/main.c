@@ -43,26 +43,25 @@ void rfSendData(void)
     uint8 ret;
     // Keep Receiver off when not needed to save power
     basicRfReceiveOff();
-    //sprintf(pTxData,"distince:%u CM.", uWaveDistance());
     printf("goto while...\r\n");
     // Main loop
     while (TRUE) {
        printf("in while...\r\n");
        gdat1=0;
        gdat2=0;
-       dht11_update();
+       dht11_update();//获取传感器数据
        printf("get data ok...\r\n");
-       sprintf(pTsxData,"shidu:%utmp%u℃\r\n", gdat1, gdat2);
+       sprintf(pTsxData,"shidu:%utmp%u℃\r\n", gdat1, gdat2);//将数据组合成字符串
        printf(pTsxData);
        printf("\r\n");
-       ret = basicRfSendPacket(RECV_ADDR, pTsxData, sizeof pTsxData);       
-       if (ret == SUCCESS) {
+       ret = basicRfSendPacket(RECV_ADDR, pTsxData, sizeof pTsxData); //发送数据      
+       if (ret == SUCCESS) {//发送成功
           printf("send msg ok!!!\r\n");
           hal_led_on(1);
           halMcuWaitMs(100);
           hal_led_off(1);
           halMcuWaitMs(900); 
-       } else {
+       } else {//发送失败
           printf("send msg error!!!\r\n");
           hal_led_on(1);
           halMcuWaitMs(1000);
@@ -81,12 +80,12 @@ void rfRecvData(void)
 
     // Main loop
     while (TRUE) {
-        while(!basicRfPacketIsReady());
-        rlen = basicRfReceive(pRxData, sizeof pRxData, NULL);
+        while(!basicRfPacketIsReady());//等待传感器数据
+        rlen = basicRfReceive(pRxData, sizeof pRxData, NULL);//接受传感器数据
         if(rlen > 0) {
           pRxData[rlen] = 0;
             
-          printf("%s rssi: %d\r\n", (char *)pRxData, basicRfGetRssi());
+          printf("%s rssi: %d\r\n", (char *)pRxData, basicRfGetRssi());//获取RSSI值
             
         }
     }

@@ -6,33 +6,24 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_CC2530F128_banked.xcl</file>
+      <file>$PROJ_DIR$\main.c</file>
       <file>$PROJ_DIR$\Debug\Exe\UltrasonicWave.d51</file>
-      <file>$TOOLKIT_DIR$\inc\clib\stdarg.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\UltrasonicWave.r51</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.r51</file>
-      <file>$TOOLKIT_DIR$\inc\clib\stdio.h</file>
-      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_CC2530F128_banked.xcl</file>
+      <file>$PROJ_DIR$\dht11.c</file>
+      <file>$PROJ_DIR$\UltrasonicWave.c</file>
       <file>$TOOLKIT_DIR$\lib\clib\cl-pli-blxd-1e16x01.r51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\UltrasonicWave.r51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdarg.h</file>
       <file>$PROJ_DIR$\Debug\Obj\UltrasonicWave.pbd</file>
       <file>$PROJ_DIR$\Debug\Obj\dht11.r51</file>
       <file>$PROJ_DIR$\Debug\Obj\dht11.pbi</file>
       <file>$PROJ_DIR$\Debug\Obj\UltrasonicWave.pbi</file>
       <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
-      <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\dht11.c</file>
-      <file>$PROJ_DIR$\UltrasonicWave.c</file>
     </outputs>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\UltrasonicWave.d51</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 0 3 10 5 8</file>
-        </tool>
-      </inputs>
-    </file>
     <file>
       <name>[ROOT_NODE]</name>
       <outputs>
@@ -43,34 +34,34 @@
       </outputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\Debug\Obj\UltrasonicWave.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 12 11 4</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
       <name>$PROJ_DIR$\main.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 5</file>
+          <name>BICOMP</name>
+          <file> 9</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 4</file>
+          <name>ICC8051</name>
+          <file> 8</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 6 2 7 13</file>
+          <name>BICOMP</name>
+          <file> 7 11 6 16</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 6 2 7 13</file>
+          <name>ICC8051</name>
+          <file> 7 11 6 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\UltrasonicWave.d51</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 2 10 13 8 5</file>
         </tool>
       </inputs>
     </file>
@@ -78,22 +69,22 @@
       <name>$PROJ_DIR$\dht11.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 10</file>
+          <name>BICOMP</name>
+          <file> 14</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 11</file>
+          <name>ICC8051</name>
+          <file> 13</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 13 6 2 7</file>
+          <name>BICOMP</name>
+          <file> 16 7 11 6</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 13 6 2 7</file>
+          <name>ICC8051</name>
+          <file> 16 7 11 6</file>
         </tool>
       </inputs>
     </file>
@@ -101,22 +92,31 @@
       <name>$PROJ_DIR$\UltrasonicWave.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 3</file>
+          <name>BICOMP</name>
+          <file> 15</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 12</file>
+          <name>ICC8051</name>
+          <file> 10</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 13</file>
+          <name>BICOMP</name>
+          <file> 16</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 13</file>
+          <name>ICC8051</name>
+          <file> 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\UltrasonicWave.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 15 14 9</file>
         </tool>
       </inputs>
     </file>

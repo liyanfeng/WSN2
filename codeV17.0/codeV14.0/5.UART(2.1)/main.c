@@ -112,7 +112,7 @@ void main(void)
 {	 
 	int ch;
         //P1 out
-	P1DIR = 0x03; 		 		//P1控制LED
+	P1DIR = 0x03; 		 		//把led1和led2设置为输出
 	led1 = 0;
 	led2 = 1;				//关LED
 

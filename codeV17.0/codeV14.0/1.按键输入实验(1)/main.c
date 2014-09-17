@@ -128,7 +128,6 @@ void main(void)
     xtal_init();
     
     io_init();
-    
     InitialT1test();
     
      while(1) {

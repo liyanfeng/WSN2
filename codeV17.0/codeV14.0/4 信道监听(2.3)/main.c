@@ -65,7 +65,7 @@ void rfChannelScan(void)
          }
          if(i<12000)
          {
-             rlen=basicRfReceive(pRxData, 64, NULL);
+             rlen=basicRfReceive(pRxData, 64, NULL); //pRxData=接受到的数据
              if(rlen>0)
              {
                  pRxData[rlen]=0;
